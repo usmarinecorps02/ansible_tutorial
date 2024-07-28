@@ -6,6 +6,7 @@
       - name: Update repository index
         yum:
           update_cache: yes
+          update_only: yes
 
       - name: Install apache2 and PHP packages
         yum:
