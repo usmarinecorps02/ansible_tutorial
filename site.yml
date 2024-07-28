@@ -1,0 +1,18 @@
+---
+
+  - hosts: all
+    become: true
+    tasks:
+
+      - name: Checking update_cashe RHEL9
+        tags: always
+        yum:
+          update_only: yes
+          update_cache: yes
+
+      - name: start httpd (RHEL9)
+        ansible.builtin.service:
+          name: httpd
+          state: started
+
+

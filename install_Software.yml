@@ -7,12 +7,10 @@
         yum:
           update_cache: yes
 
-      - name: Install apache2 package
+      - name: Install apache2 and PHP packages
         yum:
-          name: httpd
+          name:
+            - httpd
+            - php
           state: latest
 
-      - name: Install PhP package
-        yum:
-          name: php
-          state: latest
