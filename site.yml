@@ -15,4 +15,8 @@
           name: httpd
           state: started
 
-
+      - name: Update firewall setting for port 80
+        ansible.posix.firewalld:
+          port: 80/tcp
+          permanent: true
+          state: enabled
