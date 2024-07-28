@@ -1,0 +1,42 @@
+---
+  - hosts: all
+    become: true
+    tasks:
+
+      - name: Update repository index
+        yum:
+          update_cache: yes
+
+      - name: Install epel-release, git, ansible, nano  packages
+        yum:
+          name:
+            - epel-release
+            - git
+            - ansible-core
+            - nano
+          state: latest
+
+      - name: Install build tools
+        yum:
+          name: "@Development tools"
+          state: present
+
+      - name: Install Scientific Support
+        yum:
+          name: "@Scientific Support"
+          state: present
+
+      - name: Install System Tools
+        yum:
+          name: "@System Tools"
+          state: present
+
+      - name: Install Container Management
+        yum:
+          name: "@Container Management"
+          state: present
+
+      - name: Install Security Tools
+        yum:
+          name: "@Security Tools"
+          state: present
